@@ -11,48 +11,74 @@ class SplashScreen extends StatelessWidget {
       backgroundColor: AppColors.backgroundColor,
       body: Stack(
         children: [
-          Image.asset('assets/banners/banner_splash.png'),
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Column(
-                spacing: 32.0,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset('assets/logo.png', width: 100),
-                  Column(
-                    children: [
-                      Text(
-                        "Um parceiro inovador para sua",
-                        style: TextStyle(color: Colors.green, fontSize: 22.0),
-                      ),
-                      Text(
-                        "melhor experiência culinária!",
-                        style: TextStyle(
-                          color: AppColors.mainColor,
-                          fontSize: 22.0,
-                          fontWeight: FontWeight.w400,
+          Image.asset(
+            'assets/banners/banner_splash.png',
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+          ),
+          SafeArea(
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/logo.png', width: 200),
+
+                    const SizedBox(height: 24),
+                    Column(
+                      children: [
+                        Text(
+                          "Um parceiro inovador para sua",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        Text(
+                          "melhor experiência culinária!",
+                          style: TextStyle(
+                            color: AppColors.mainColor,
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(height: 32),
+
+                    // Botão "Bora!"
+                    SizedBox(
+                      width: 200,
+                      height: 48,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomeScreen(),
+                            ),
+                          );
+                        },
+                        child: const Text("Bora!"),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFFFA451), // laranja do Figma
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          textStyle: const TextStyle(fontSize: 16),
                         ),
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: 200,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return HomeScreen();
-                            },
-                          ),
-                        );
-                      },
-                      child: Text("Bora!"),
                     ),
-                  ),
-                ],
+
+                    const SizedBox(height: 40), // margem inferior
+                  ],
+                ),
               ),
             ),
           ),
