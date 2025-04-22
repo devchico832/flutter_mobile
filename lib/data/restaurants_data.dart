@@ -14,7 +14,6 @@ class RestaurantsData {
       Restaurant restaurant = Restaurant.fromMap(restaurantData);
       listRestaurant.add(restaurant);
     }
-    
     return listRestaurant;
   }
 }
