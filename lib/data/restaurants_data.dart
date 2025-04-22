@@ -3,10 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:myapp/model/restaurant.dart';
 
 class RestaurantsData {
+  List<Restaurant> listRestaurant = [];
   Future<List<Restaurant>> getRestaurants() async {
-    List<Restaurant> listRestaurant = [];
 
-    String jsonString = await rootBundle.loadString('assets/data.json');
+    String jsonString = await rootBundle.loadString('assets/data.json'); 
     Map<String, dynamic> data = json.decode(jsonString);
     List<dynamic> restaurantsData = data['restaurants'];
 
@@ -14,7 +14,7 @@ class RestaurantsData {
       Restaurant restaurant = Restaurant.fromMap(restaurantData);
       listRestaurant.add(restaurant);
     }
-
+    
     return listRestaurant;
   }
 }

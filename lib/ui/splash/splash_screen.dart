@@ -17,14 +17,14 @@ class SplashScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
                 spacing: 32.0,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/logo.png', width: 200),
+                  Image.asset('assets/logo.png', width: 100),
                   Column(
                     children: [
                       Text(
                         "Um parceiro inovador para sua",
-                        style: TextStyle(color: Colors.white, fontSize: 22.0),
+                        style: TextStyle(color: Colors.green, fontSize: 22.0),
                       ),
                       Text(
                         "melhor experiência culinária!",
@@ -37,7 +37,7 @@ class SplashScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    width: double.infinity,
+                    width: 200,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.pushReplacement(

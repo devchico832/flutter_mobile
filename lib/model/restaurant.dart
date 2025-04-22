@@ -1,7 +1,7 @@
 class Restaurant {
   String id;
   String imagePath;
-  String Name;
+  String name;
   String description;
   double stars;
   int distance;
@@ -10,7 +10,7 @@ class Restaurant {
   Restaurant({
     required this.id,
     required this.imagePath,
-    required this.Name,
+    required this.name,
     required this.description,
     required this.stars,
     required this.distance,
@@ -21,7 +21,7 @@ class Restaurant {
     return {
       'id': id,
       'imagePath': imagePath,
-      'Name': Name,
+      'name': name,
       'description': description,
       'stars': stars,
       'distance': distance,
@@ -33,7 +33,7 @@ class Restaurant {
     return Restaurant(
       id: map['id'],
       imagePath: map['imagePath'],
-      Name: map['Name'],
+      name: map['name'],
       description: map['description'],
       stars: map['stars'],
       distance: map['distance'],
@@ -43,6 +43,6 @@ class Restaurant {
 
   @override
   String toString() {
-    return 'Restaurant(id: $id, imagePath: $imagePath, Name: $Name, description: $description, stars: $stars, distance: $distance, categories: $categories)';
+    return 'Restaurant(id: $id, imagePath: $imagePath, Name: $name, description: $description, stars: $stars, distance: $distance, categories: $categories)';
   }
 }
