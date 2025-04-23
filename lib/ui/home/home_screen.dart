@@ -7,11 +7,11 @@ import 'package:myapp/ui/home/widgets/restaurant_widget.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final RestaurantsData? restaurantsData;
+  const HomeScreen({super.key, required this.restaurantsData});
 
   @override
   Widget build(BuildContext context) {
-    RestaurantsData restaurantsData = RestaurantsData();
     return Scaffold(
       drawer: Drawer(),
       appBar: AppBar(
@@ -44,10 +44,10 @@ class HomeScreen extends StatelessWidget {
               Text("Bem avaliados"),
               Column(
                 spacing: 16.0,
-                children: List.generate(restaurantsData.listRestaurant.length, (
+                children: List.generate(restaurantsData!.listRestaurant.length, (
                   index,
                 ) {
-                  Restaurant restaurant = restaurantsData.listRestaurant[index];
+                  Restaurant restaurant = restaurantsData!.listRestaurant[index];
 
                   return RestaurantWidget(restaurant: restaurant);
                 }),

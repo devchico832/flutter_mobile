@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/data/restaurants_data.dart';
 import 'package:myapp/ui/_core/app_colors.dart';
 import 'package:myapp/ui/home/home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+  final RestaurantsData restaurantsData;
+  const SplashScreen({super.key, required this.restaurantsData});
 
   @override
   Widget build(BuildContext context) {
@@ -54,18 +56,17 @@ class SplashScreen extends StatelessWidget {
 
                     // Botão "Bora!"
                     SizedBox(
-                      width: 200,
-                      height: 48,
+                      width: 250,
+                      height: 50,
                       child: ElevatedButton(
                         onPressed: () {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const HomeScreen(),
+                              builder: (context) => HomeScreen(restaurantsData: restaurantsData,),
                             ),
                           );
                         },
-                        child: const Text("Bora!"),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFFFFA451), // laranja do Figma
                           shape: RoundedRectangleBorder(
@@ -73,6 +74,7 @@ class SplashScreen extends StatelessWidget {
                           ),
                           textStyle: const TextStyle(fontSize: 16),
                         ),
+                        child: const Text("Bora!"),
                       ),
                     ),
 
